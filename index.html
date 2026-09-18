@@ -1,303 +1,822 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Mapas Mentais de Cinesiologia</title>
-    <style>
-      :root {
-        --bg: #ffffff;
-        --text: #111111;
-        --muted: #444444;
-        --subtle: #555555;
-        --line: #e5e5e5;
-        --green: #ccff00;
-        --green-dark: #22c55e;
-        --shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
-      }
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chega de Blefar na Frente do Aluno — 150 Mapas Mentais de Cinesiologia</title>
+<meta name="description" content="150 mapas mentais de cinesiologia da musculação, um por exercício: músculos, execução correta e erros comuns. Abre no celular, entre uma série e outra. Para o personal recém-formado.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chega de Blefar na Frente do Aluno — 150 Mapas Mentais de Cinesiologia">
+<meta property="og:description" content="Um mapa por exercício: músculos, execução correta e erros comuns. Abre no celular, entre uma série e outra.">
+<meta property="og:image" content="img/mockup-principal.jpg">
+<meta name="theme-color" content="#0C0E0C">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230C0E0C'/%3E%3Cpath d='M14 34l12 12 24-26' fill='none' stroke='%2335D46A' stroke-width='8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="img/mockup-principal.jpg">
 
-      * {
-        box-sizing: border-box;
-      }
+<!-- ==== PIXEL DA META ====
+     Cole aqui o código-base do Pixel (Gerenciador de Eventos → Fontes de dados → Instalar código).
+     Sem isso o anúncio não aprende quem compra.
+     Eventos: PageView (automático) · ViewContent (carrega a página) · InitiateCheckout (clique no botão)
+-->
 
-      html {
-        scroll-behavior: smooth;
-      }
+<style>
+  :root{
+    --bg:#0C0E0C;
+    --surface:#151815;
+    --surface-2:#1C201C;
+    --line:#2B312B;
+    --text:#F3F5F1;
+    --muted:#B3BDB3;
+    --green:#35D46A;
+    --green-deep:#1F9A4C;
+    --green-tint:rgba(53,212,106,.12);
+    --ink:#0B120D;
+    --paper:#F5F6F2;
+    --paper-2:#FFFFFF;
+    --paper-line:#DEE2DA;
+    --paper-text:#141814;
+    --paper-muted:#5B655B;
+    --old:#C98B8B;
+    --radius:14px;
+    --radius-lg:22px;
+    --shadow:0 14px 34px -12px rgba(0,0,0,.55);
+    --shadow-paper:0 8px 18px -10px rgba(20,24,20,.35);
+    --display:'Barlow Condensed',Impact,sans-serif;
+    --body:'Barlow',system-ui,sans-serif;
+    --max:1120px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+  body{
+    margin:0;background:var(--bg);color:var(--text);
+    font-family:var(--body);font-size:17px;line-height:1.55;
+    -webkit-font-smoothing:antialiased;overflow-x:hidden;
+  }
+  ::selection{background:var(--green);color:var(--ink);}
+  :focus-visible{outline:3px solid var(--green);outline-offset:3px;border-radius:6px;}
+  img{display:block;max-width:100%;height:auto;}
+  a{color:inherit;text-decoration:none;}
+  ul,ol{margin:0;padding:0;list-style:none;}
+  p{margin:0;}
+  h1,h2,h3{font-family:var(--display);font-weight:800;line-height:1.06;margin:0;letter-spacing:-.01em;text-wrap:balance;}
+  h2{font-size:clamp(34px,6.4vw,54px);}
+  h3{font-size:clamp(22px,3.6vw,28px);font-weight:700;}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 20px;}
+  .narrow{max-width:720px;margin-left:auto;margin-right:auto;}
+  section{padding:56px 0;}
+  .lead{font-size:clamp(17px,2.2vw,20px);color:var(--muted);max-width:62ch;margin-top:14px;}
+  .paper .lead{color:var(--paper-muted);}
+  .icon{width:1.1em;height:1.1em;flex:0 0 auto;}
+  .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;}
 
-      body {
-        margin: 0;
-        background: var(--bg);
-        color: var(--text);
-        font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      }
+  /* ===== Botões ===== */
+  .btn{
+    line-height:1.1;display:inline-flex;align-items:center;justify-content:center;gap:10px;
+    font-family:var(--display);font-weight:800;font-size:22px;letter-spacing:.01em;text-transform:uppercase;
+    min-height:60px;padding:14px 28px;border-radius:999px;border:0;cursor:pointer;width:100%;
+    background:var(--green);color:var(--ink);
+    box-shadow:0 10px 24px -10px rgba(0,0,0,.6);
+    transition:transform .18s cubic-bezier(.2,.8,.2,1),box-shadow .18s,background .18s;
+  }
+  .btn:hover{background:#4BE07C;transform:translateY(-2px);box-shadow:0 16px 30px -12px rgba(0,0,0,.65);}
+  .btn:active{transform:translateY(0);}
+  .btn .icon{width:22px;height:22px;}
+  .btn-ghost{
+    background:transparent;color:var(--text);border:2px solid var(--line);box-shadow:none;font-size:18px;min-height:52px;
+  }
+  .btn-ghost:hover{background:var(--surface-2);border-color:var(--muted);box-shadow:none;}
+  .btn-note{margin-top:12px;font-size:14px;color:var(--muted);display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center;justify-content:center;}
+  .btn-note span{display:inline-flex;align-items:center;gap:6px;}
+  .btn-note .icon{color:var(--green);}
+  @media(min-width:760px){.btn{width:auto;min-width:340px;}}
 
-      .page {
-        max-width: 390px;
-        margin: 0 auto;
-        padding: 0 20px 40px;
-      }
+  /* ===== Barra de topo ===== */
+  .topbar{
+    background:var(--green);color:var(--ink);text-align:center;
+    font-weight:700;font-size:14px;line-height:1.3;padding:10px 16px;letter-spacing:.01em;
+  }
 
-      .top-banner {
-        height: 36px;
-        background: var(--green);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        font-size: 13px;
-        font-weight: 500;
-        color: #111111;
-        line-height: 1;
-      }
+  /* ===== Hero ===== */
+  .hero{padding:40px 0 48px;position:relative;overflow:hidden;}
+  .hero::before{
+    content:"";position:absolute;inset:auto -30% -40% -30%;height:70%;
+    background:radial-gradient(60% 60% at 50% 100%,rgba(53,212,106,.16),transparent 70%);
+    pointer-events:none;
+  }
+  .hero-grid{display:grid;gap:24px;position:relative;grid-template-areas:"h1" "media" "rest";}
+  .hero-h1{grid-area:h1;} .hero-media{grid-area:media;} .hero-rest{grid-area:rest;}
+  .hero h1{font-size:clamp(40px,4.6vw,60px);}
+  .hero h1 em{font-style:normal;color:var(--green);}
+  .hero .lead{margin-top:0;}
+  .hero-media{margin:0 -8px;}
+  .hero-media img{border-radius:var(--radius);box-shadow:var(--shadow);width:100%;aspect-ratio:3/2;object-fit:cover;}
+  .hero-points{margin-top:22px;display:grid;gap:12px;}
+  .hero-points li{display:flex;gap:12px;align-items:flex-start;font-weight:500;font-size:16.5px;}
+  .hero-points .icon{color:var(--green);margin-top:3px;width:20px;height:20px;}
+  .hero-offer{
+    margin-top:26px;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-lg);
+    padding:20px 20px 22px;display:grid;gap:14px;
+  }
+  .price-row{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;}
+  .price-row .label{font-weight:600;color:var(--muted);font-size:15px;flex-basis:100%;}
+  .price-row .old{color:var(--old);text-decoration:line-through;font-size:17px;font-weight:500;}
+  .price-row .now{font-family:var(--display);font-weight:800;font-size:56px;line-height:.9;color:var(--text);letter-spacing:-.02em;}
+  .price-row .now small{font-size:.5em;vertical-align:top;margin-right:2px;font-weight:700;}
+  .price-row .per{font-size:15px;color:var(--muted);font-weight:500;}
+  @media(min-width:900px){
+    .hero{padding:64px 0 80px;}
+    .hero-grid{grid-template-columns:1.02fr .98fr;gap:20px 56px;align-items:center;grid-template-areas:"h1 media" "rest media";}
+    .hero-media{margin:0;}
+  }
 
-      .headline {
-        padding-top: 28px;
-      }
+  /* ===== Dor ===== */
+  .dor{padding-top:20px;}
+  .dor h2{max-width:14ch;}
+  .cenas{margin-top:28px;display:grid;gap:14px;}
+  .cena{
+    background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:18px 20px;
+    display:grid;gap:8px;
+  }
+  .cena q{font-family:var(--display);font-weight:700;font-size:26px;line-height:1.12;color:var(--text);quotes:"“" "”";}
+  .cena p{color:var(--muted);font-size:16px;}
+  .contraste{margin-top:32px;border-left:0;display:grid;gap:10px;max-width:60ch;}
+  .contraste p{font-size:clamp(19px,2.6vw,23px);font-weight:600;line-height:1.35;}
+  .contraste p strong{color:var(--green);font-weight:700;}
+  .semcom{margin-top:36px;display:grid;gap:14px;}
+  .semcom > div{border-radius:var(--radius);padding:20px;border:1px solid var(--line);background:var(--surface);}
+  .semcom h3{font-size:20px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);}
+  .semcom .com{border-color:rgba(53,212,106,.5);background:linear-gradient(180deg,var(--green-tint),transparent 80%),var(--surface);}
+  .semcom .com h3{color:var(--green);}
+  .semcom ul{margin-top:12px;display:grid;gap:9px;}
+  .semcom li{display:flex;gap:10px;align-items:flex-start;font-size:16px;}
+  .semcom .icon{margin-top:4px;width:18px;height:18px;color:var(--muted);}
+  .semcom .com .icon{color:var(--green);}
+  @media(min-width:760px){.cenas{grid-template-columns:repeat(3,1fr);} .semcom{grid-template-columns:1fr 1fr;}}
 
-      h1 {
-        margin: 0;
-        font-size: 32px;
-        line-height: 1.2;
-        font-weight: 800;
-        letter-spacing: -0.06em;
-        color: var(--text);
-      }
+  /* ===== Superfície clara (prova de produto) ===== */
+  .paper{background:var(--paper);color:var(--paper-text);}
+  .paper h2,.paper h3{color:var(--paper-text);}
+  .paper ::selection{background:var(--paper-text);color:var(--paper);}
 
-      h1 .accent {
-        color: var(--green);
-        font-style: normal;
-      }
+  /* Dissecação */
+  .disseca-grid{margin-top:32px;display:grid;gap:28px;}
+  .mapa-grande{
+    background:var(--paper-2);border:0;border-radius:var(--radius);padding:8px;
+    box-shadow:var(--shadow-paper);position:relative;cursor:zoom-in;
+  }
+  .mapa-grande img{border-radius:8px;aspect-ratio:1287/862;width:100%;object-fit:cover;}
+  .zoom-hint{
+    position:absolute;right:16px;bottom:16px;background:var(--paper-text);color:var(--paper);
+    font-size:13px;font-weight:600;padding:8px 12px;border-radius:999px;display:inline-flex;gap:6px;align-items:center;
+  }
+  .blocos{display:grid;gap:0;counter-reset:bloco;}
+  .blocos li{
+    display:grid;grid-template-columns:34px 1fr;gap:12px;padding:12px 0;border-top:1px solid var(--paper-line);align-items:start;
+  }
+  .blocos li:first-child{border-top:0;padding-top:0;}
+  .blocos .n{
+    font-family:var(--display);font-weight:800;font-size:20px;width:32px;height:32px;border-radius:8px;
+    display:grid;place-items:center;color:#fff;
+  }
+  .blocos b{display:block;font-size:17px;}
+  .blocos span{display:block;color:var(--paper-muted);font-size:15px;line-height:1.45;}
+  .bl-1{background:#D6342C;} .bl-2{background:#D35400;} .bl-3{background:#2E8B57;} .bl-4{background:#2563EB;}
+  .bl-5{background:#1F4E79;} .bl-6{background:#2E7D32;} .bl-7{background:#6A1B9A;} .bl-8{background:#B8860B;}
+  .disseca-nota{margin-top:20px;font-size:17px;font-weight:600;color:var(--paper-text);max-width:56ch;}
+  @media(min-width:900px){.disseca-grid{grid-template-columns:1.2fr .8fr;align-items:start;} .mapa-grande{position:sticky;top:20px;}}
 
-      .product-image {
-        width: 100%;
-        height: 280px;
-        border-radius: 12px;
-        background: #e8e8e8;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 20px 0;
-        color: #666;
-        font-weight: 600;
-        text-align: center;
-        padding: 16px;
-      }
+  /* Galeria */
+  .galeria{padding-top:0;}
+  .galeria-grid{margin-top:26px;display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+  .galeria button{
+    all:unset;cursor:zoom-in;display:block;background:var(--paper-2);border-radius:12px;
+    padding:6px;box-shadow:var(--shadow-paper);transition:transform .2s cubic-bezier(.2,.8,.2,1);
+  }
+  .galeria button:hover{transform:translateY(-3px);}
+  .galeria button:focus-visible{outline:3px solid var(--paper-text);outline-offset:3px;}
+  .galeria img{border-radius:7px;aspect-ratio:1287/862;width:100%;object-fit:cover;}
+  .galeria figcaption{font-size:13.5px;font-weight:600;padding:8px 4px 4px;color:var(--paper-muted);}
+  @media(min-width:760px){.galeria-grid{grid-template-columns:repeat(3,1fr);gap:16px;}}
 
-      .description {
-        margin: 0;
-        font-size: 15px;
-        line-height: 1.6;
-        color: #333333;
-      }
+  /* Índice do conteúdo */
+  .incluso{padding-top:0;}
+  .incluso-grid{margin-top:28px;display:grid;gap:22px;}
+  .grupos{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+  .grupos li{
+    background:var(--paper-2);border:1px solid var(--paper-line);border-radius:12px;padding:14px 14px;
+    font-family:var(--display);font-weight:700;font-size:21px;line-height:1.15;display:flex;align-items:center;gap:10px;
+  }
+  .grupos .icon{color:var(--green-deep);width:20px;height:20px;}
+  .exemplos{color:var(--paper-muted);font-size:15.5px;line-height:1.6;}
+  .exemplos b{color:var(--paper-text);}
+  .formatos{display:grid;gap:10px;}
+  .formatos li{display:flex;gap:12px;align-items:flex-start;font-size:16px;}
+  .formatos .icon{color:var(--green-deep);margin-top:3px;width:20px;height:20px;}
+  @media(min-width:760px){.incluso-grid{grid-template-columns:1.1fr .9fr;} .grupos{grid-template-columns:repeat(3,1fr);}}
 
-      .benefits {
-        margin-top: 20px;
-        display: flex;
-        flex-direction: column;
-        gap: 14px;
-      }
+  /* ===== Como usar ===== */
+  .passos{margin-top:30px;display:grid;gap:14px;counter-reset:passo;}
+  .passo{
+    border:1px solid var(--line);background:var(--surface);border-radius:var(--radius);padding:20px;
+    display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:start;
+  }
+  .passo .quando{
+    font-family:var(--display);font-weight:800;font-size:15px;letter-spacing:.08em;text-transform:uppercase;color:var(--green);
+    writing-mode:vertical-rl;transform:rotate(180deg);border-right:2px solid var(--green);padding-right:8px;
+  }
+  .passo h3{font-size:24px;}
+  .passo p{margin-top:6px;color:var(--muted);font-size:16px;}
+  @media(min-width:760px){.passos{grid-template-columns:repeat(3,1fr);}}
 
-      .benefit-item {
-        display: flex;
-        align-items: flex-start;
-        gap: 10px;
-        font-size: 15px;
-        line-height: 1.5;
-        color: var(--text);
-      }
+  /* ===== Bônus ===== */
+  .bonus{padding-top:0;}
+  .bonus-grid{margin-top:30px;display:grid;gap:18px;}
+  .bonus-item{
+    display:grid;gap:14px;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-lg);overflow:hidden;
+  }
+  .bonus-item img{aspect-ratio:3/2;object-fit:cover;width:100%;}
+  .bonus-body{padding:0 20px 22px;display:grid;gap:8px;}
+  .bonus-body h3{font-size:26px;}
+  .bonus-body p{color:var(--muted);font-size:15.5px;}
+  .bonus-body .quando{font-size:15px;color:var(--text);font-weight:600;}
+  .bonus-body .quando b{color:var(--green);font-weight:700;}
+  .bonus-body .valor{font-size:14px;color:var(--muted);margin-top:4px;}
+  .bonus-body .valor s{color:var(--old);}
+  @media(min-width:760px){.bonus-grid{grid-template-columns:repeat(3,1fr);}}
 
-      .check {
-        width: 18px;
-        height: 18px;
-        min-width: 18px;
-        border-radius: 50%;
-        background: rgba(34, 197, 94, 0.12);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-top: 2px;
-      }
+  /* ===== Oferta ===== */
+  .oferta{padding-top:24px;position:relative;}
+  .oferta::before{
+    content:"";position:absolute;inset:0;
+    background:radial-gradient(50% 40% at 50% 30%,rgba(53,212,106,.12),transparent 70%);pointer-events:none;
+  }
+  .oferta-card{
+    position:relative;max-width:600px;margin:32px auto 0;background:var(--surface);
+    border:2px solid var(--green);border-radius:var(--radius-lg);padding:26px 22px 26px;
+    box-shadow:0 30px 60px -28px rgba(0,0,0,.7);display:grid;gap:18px;
+  }
+  .oferta-card .nome{font-family:var(--display);font-weight:800;font-size:34px;line-height:1.06;}
+  .oferta-card .nome small{display:block;font-family:var(--body);font-weight:500;font-size:15px;line-height:1.4;color:var(--muted);margin-top:6px;letter-spacing:0;}
+  .stack{display:grid;gap:10px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:16px 0;}
+  .stack li{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;font-size:16px;}
+  .stack li > span:first-child{display:flex;gap:10px;align-items:flex-start;}
+  .stack .icon{color:var(--green);margin-top:4px;width:18px;height:18px;}
+  .stack .v{color:var(--muted);font-size:14px;white-space:nowrap;font-variant-numeric:tabular-nums;}
+  .stack li.total{font-weight:700;padding-top:6px;}
+  .stack li.total .v{color:var(--old);text-decoration:line-through;font-size:15px;}
+  .oferta-card .price-row .now{font-size:64px;}
+  .oferta-intro{max-width:58ch;margin:14px auto 0;text-align:center;color:var(--muted);font-size:clamp(17px,2.2vw,19px);position:relative;}
+  .preco-nota{font-size:15.5px;font-weight:600;color:var(--text);margin-top:-6px;}
+  .oferta-compara{max-width:600px;margin:18px auto 0;text-align:center;font-size:16px;color:var(--muted);position:relative;}
+  .oferta-compara b{color:var(--text);}
+  .final-linha{margin-top:14px;font-size:clamp(18px,2.4vw,22px);font-weight:600;color:var(--muted);}
+  .basico{
+    max-width:600px;margin:14px auto 0;padding:16px 20px;border:1px dashed var(--line);border-radius:var(--radius);
+    display:flex;flex-wrap:wrap;gap:8px 16px;justify-content:space-between;align-items:center;font-size:15px;color:var(--muted);
+  }
+  .basico a{color:var(--text);font-weight:600;text-decoration:underline;text-underline-offset:4px;text-decoration-color:var(--green);}
+  .basico a:hover{color:var(--green);}
 
-      .check svg {
-        width: 11px;
-        height: 11px;
-        stroke: var(--green-dark);
-        stroke-width: 2.5;
-        fill: none;
-      }
+  /* ===== Garantia ===== */
+  .garantia{padding-top:0;}
+  .garantia-box{
+    max-width:760px;margin:0 auto;display:grid;gap:18px;align-items:center;
+    background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-lg);padding:26px 22px;
+  }
+  .garantia-box img{width:150px;margin:0 auto;}
+  .garantia-box h2{font-size:clamp(30px,5vw,40px);}
+  .garantia-box p{color:var(--muted);margin-top:10px;font-size:16px;}
+  @media(min-width:700px){.garantia-box{grid-template-columns:170px 1fr;text-align:left;}}
 
-      .cta-box {
-        margin-top: 24px;
-        background: #ffffff;
-        border: 1px solid var(--line);
-        border-radius: 16px;
-        box-shadow: var(--shadow);
-        padding: 20px;
-      }
+  /* ===== FAQ ===== */
+  .faq-list{margin-top:28px;display:grid;gap:10px;max-width:760px;margin-left:auto;margin-right:auto;}
+  details{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:0 18px;}
+  details[open]{border-color:rgba(53,212,106,.5);}
+  summary{
+    list-style:none;cursor:pointer;padding:16px 0;font-weight:600;font-size:17px;
+    display:flex;justify-content:space-between;align-items:center;gap:14px;
+  }
+  summary::-webkit-details-marker{display:none;}
+  summary .icon{width:22px;height:22px;color:var(--green);transition:transform .2s;}
+  details[open] summary .icon{transform:rotate(45deg);}
+  details p{padding:0 0 18px;color:var(--muted);font-size:16px;}
+  details p a{text-decoration:underline;text-underline-offset:3px;}
 
-      .package-line {
-        font-size: 13px;
-        color: var(--subtle);
-        margin: 0;
-      }
+  /* ===== Fechamento ===== */
+  .final{text-align:center;padding-bottom:88px;}
+  .final h2{font-size:clamp(36px,7vw,60px);margin:0 auto;}
+  @media(min-width:760px){.final h2{max-width:18ch;}}
+  .final h2 em{font-style:normal;color:var(--green);}
+  .final .price-row{justify-content:center;margin-top:22px;} .final .price-row .label{text-align:center;}
+  .final .btn{margin-top:18px;}
 
-      .price-row {
-        display: flex;
-        align-items: baseline;
-        gap: 10px;
-        margin-top: 14px;
-        flex-wrap: wrap;
-      }
+  footer{border-top:1px solid var(--line);padding:32px 0 120px;color:var(--muted);font-size:13.5px;text-align:center;}
+  footer b{color:var(--text);display:block;font-size:15px;margin-bottom:8px;}
+  footer p{max-width:60ch;margin:0 auto 12px;}
+  footer nav{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+  footer nav a{text-decoration:underline;text-underline-offset:3px;}
+  @media(min-width:760px){footer{padding-bottom:40px;}}
 
-      .old-price {
-        font-size: 14px;
-        color: #999999;
-        text-decoration: line-through;
-      }
+  /* ===== Barra fixa (celular) ===== */
+  .sticky{
+    position:fixed;left:0;right:0;bottom:0;z-index:50;
+    background:rgba(12,14,12,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+    border-top:1px solid var(--line);padding:10px 16px calc(10px + env(safe-area-inset-bottom));
+    display:flex;align-items:center;gap:12px;
+    transform:translateY(110%);transition:transform .35s cubic-bezier(.2,.8,.2,1);
+  }
+  .sticky.on{transform:translateY(0);}
+  .sticky .p{display:grid;line-height:1.1;}
+  .sticky .p small{font-size:12px;color:var(--muted);font-weight:600;}
+  .sticky .p strong{font-family:var(--display);font-size:26px;font-weight:800;}
+  .sticky .btn{flex:1;min-height:50px;font-size:19px;padding:10px 16px;width:auto;min-width:0;}
+  @media(min-width:760px){.sticky{display:none;}}
 
-      .price {
-        display: inline-flex;
-        align-items: baseline;
-        gap: 2px;
-        color: var(--text);
-      }
+  /* ===== Lightbox ===== */
+  dialog.lb{
+    border:0;padding:0;background:transparent;max-width:100vw;max-height:100vh;width:100vw;height:100vh;margin:0;
+  }
+  dialog.lb::backdrop{background:rgba(6,8,6,.92);}
+  .lb-inner{width:100%;height:100%;overflow:auto;display:grid;place-items:center;padding:16px;}
+  .lb-inner img{max-width:min(1287px,100%);width:100%;border-radius:10px;background:#fff;}
+  .lb-close{
+    position:fixed;top:14px;right:14px;width:46px;height:46px;border-radius:50%;border:0;background:var(--green);color:var(--ink);
+    display:grid;place-items:center;cursor:pointer;z-index:2;
+  }
+  .lb-close .icon{width:22px;height:22px;}
+  .lb-tip{position:fixed;left:50%;bottom:16px;transform:translateX(-50%);font-size:13px;color:var(--muted);background:rgba(12,14,12,.8);padding:6px 12px;border-radius:999px;}
 
-      .price .currency {
-        font-size: 20px;
-        font-weight: 700;
-      }
+  /* ===== Movimento (um momento só: entrada do hero) ===== */
+  @media(prefers-reduced-motion:no-preference){
+    .hero-h1,.hero-media,.hero-rest{animation:rise .7s cubic-bezier(.16,1,.3,1) both;}
+    .hero-media{animation-delay:.1s;} .hero-rest{animation-delay:.18s;}
+    @keyframes rise{from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:none;}}
+  }
+  @media(prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto;} .sticky{transition:none;} .btn,.galeria button{transition:none;}
+  }
 
-      .price .amount {
-        font-size: 44px;
-        font-weight: 800;
-        letter-spacing: -0.08em;
-        line-height: 1;
-      }
+  /* ===== Impressão / PDF ===== */
+  @media print{
+    @page{size:A4;margin:0;}
+    html,body{background:var(--bg);}
+    body{-webkit-print-color-adjust:exact;print-color-adjust:exact;font-size:15px;}
+    .wrap{padding:0 34px;}
+    .sticky,dialog,.zoom-hint,.hero::before,.oferta::before{display:none!important;}
+    *{box-shadow:none!important;text-shadow:none!important;} /* sombras viram blocos pretos na compressão do PDF */
+    .hero-h1,.hero-media,.hero-rest{animation:none!important;}
+    .hero{padding:36px 0 40px;}
+    section{padding:40px 0;}
+    h2{break-after:avoid;}
+    .cena,.bonus-item,.oferta-card,.garantia-box,details,.passo,.galeria figure,.mapa-grande,.hero-offer,.semcom > div,.basico,.blocos li,.grupos li,.formatos li{break-inside:avoid;}
+    .mapa-grande{position:static;cursor:default;}
+    .galeria button,.mapa-grande{box-shadow:none;}
+    .disseca,.oferta,.incluso,.bonus{break-before:page;}
+    .incluso-grid,.final,footer{break-inside:avoid;}
+    footer{padding-bottom:40px;}
+    /* no papel a largura é menor que a dos breakpoints: força a composição de tela larga */
+    .hero-media{max-width:72%;margin:0 auto;}
+    .cenas,.bonus-grid,.galeria-grid,.passos,.grupos{grid-template-columns:repeat(3,1fr);}
+    .semcom{grid-template-columns:1fr 1fr;}
+    .incluso-grid{grid-template-columns:1.1fr .9fr;}
+    .disseca-grid{grid-template-columns:1.15fr .85fr;align-items:start;}
+    .garantia-box{grid-template-columns:150px 1fr;}
+    .btn{width:auto;min-width:340px;}
+    .final h2{max-width:18ch;}
+    .bonus-body h3{font-size:22px;}
+  }
+</style>
+</head>
+<body>
 
-      .price-note {
-        font-size: 13px;
-        color: var(--subtle);
-        margin-left: 4px;
-      }
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></symbol>
+  <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 5 3.4 8.4 8 9 4.6-.6 8-4 8-9V6l-8-3z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="m9 12 2 2 4-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><rect x="7" y="2.5" width="10" height="19" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M11 18h2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="i-print" viewBox="0 0 24 24"><path d="M7 8V3h10v5M7 17H4v-6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v6h-3" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><rect x="7" y="14" width="10" height="7" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+  <symbol id="i-zoom" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="m20 20-3.5-3.5M11 8v6M8 11h6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="i-pix" viewBox="0 0 24 24"><path d="m12 3 4 4-4 4-4-4 4-4zm0 10 4 4-4 4-4-4 4-4zM3 12l4-4 4 4-4 4-4-4zm10 0 4-4 4 4-4 4-4-4z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+  <symbol id="i-muscle" viewBox="0 0 24 24"><path d="M2 10h2v4H2zm18 0h2v4h-2zM5 8h3v8H5zm11 0h3v8h-3zM8 11h8v2H8z" fill="currentColor"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="m3 7 9 6 9-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+</svg>
 
-      .cta-button {
-        width: 100%;
-        height: 54px;
-        border: none;
-        border-radius: 10px;
-        background: var(--green);
-        color: var(--text);
-        font-size: 15px;
-        font-weight: 700;
-        letter-spacing: 0.01em;
-        margin-top: 14px;
-        cursor: pointer;
-        transition: filter 0.15s ease;
-      }
+<div class="topbar">Para o personal recém-formado que já ficou sem resposta na frente do aluno</div>
 
-      .cta-button:hover {
-        filter: brightness(0.9);
-      }
+<!-- ============ 1. HERO ============ -->
+<header class="hero">
+  <div class="wrap hero-grid">
+    <h1 class="hero-h1">Nunca mais trave quando o aluno perguntar <em>“esse exercício pega o quê?”</em></h1>
 
-      .trust-row {
-        display: flex;
-        justify-content: center;
-        gap: 18px;
-        margin-top: 14px;
-        flex-wrap: wrap;
-      }
-
-      .trust-item {
-        display: flex;
-        align-items: center;
-        gap: 4px;
-        font-size: 12px;
-        color: var(--subtle);
-      }
-
-      .trust-item svg {
-        width: 12px;
-        height: 12px;
-        display: block;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="page">
-      <div class="top-banner">Para o personal recém-formado que já ficou sem resposta na frente do aluno</div>
-
-      <header class="headline">
-        <h1>
-          Nunca mais trave quando o aluno perguntar
-          <span class="accent">“esse exercício pega o quê?”</span>
-        </h1>
-      </header>
-
-      <div class="product-image">[IMAGEM DO PRODUTO]</div>
-
-      <p class="description">
-        150 mapas mentais de cinesiologia, um por exercício. Você abre no celular,
-        mostra o músculo na imagem e responde com calma — em vez de blefar.
-      </p>
-
-      <div class="benefits">
-        <div class="benefit-item">
-          <span class="check" aria-label="check">
-            <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6.2 4.8 8.5 9.5 3.5" /></svg>
-          </span>
-          <span>Quais músculos cada exercício trabalha, com a imagem para mostrar</span>
-        </div>
-
-        <div class="benefit-item">
-          <span class="check" aria-label="check">
-            <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6.2 4.8 8.5 9.5 3.5" /></svg>
-          </span>
-          <span>Execução correta e os erros a corrigir, desenhados</span>
-        </div>
-
-        <div class="benefit-item">
-          <span class="check" aria-label="check">
-            <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6.2 4.8 8.5 9.5 3.5" /></svg>
-          </span>
-          <span>No celular, no meio do treino. Acesso na hora</span>
-        </div>
-      </div>
-
-      <section class="cta-box">
-        <p class="package-line">Pacote completo: 150 mapas + 3 bônus</p>
-
-        <div class="price-row">
-          <span class="old-price">R$ 320,00</span>
-          <div class="price">
-            <span class="currency">R$</span>
-            <span class="amount">37,90</span>
-          </div>
-          <span class="price-note">uma vez só, seu para sempre</span>
-        </div>
-
-        <button class="cta-button" type="button">QUERO OS 150 MAPAS →</button>
-
-        <div class="trust-row">
-          <div class="trust-item">
-            <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M6 1v10M1 6h10" stroke="#555555" stroke-width="1.6" stroke-linecap="round" fill="none" /></svg>
-            <span>Acesso imediato</span>
-          </div>
-          <div class="trust-item">
-            <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M6 1.5 7.8 4.2l3.2.5-2.3 2.3.5 3.2L6 0l-3.2 1.7.5-3.2L1 4.7l3.2-.5L6 1.5Z" stroke="#555555" stroke-width="1.1" fill="none" /></svg>
-            <span>Garantia de 7 dias</span>
-          </div>
-          <div class="trust-item">
-            <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4.5h8v5H2zm1-2h6v1H3zM4 7.5h4" stroke="#555555" stroke-width="1.2" fill="none" stroke-linecap="round" /></svg>
-            <span>Pix ou cartão</span>
-          </div>
-        </div>
-      </section>
+    <div class="hero-media">
+      <img src="img/mockup-principal.jpg" width="1200" height="800" alt="Capa e páginas dos 150 mapas mentais de cinesiologia: supino reto, puxada frontal, agachamento livre, levantamento terra e rosca direta" fetchpriority="high">
     </div>
 
-    <script>
-      document.querySelector('.cta-button').addEventListener('click', function () {
-        console.log('CTA clicado');
+    <div class="hero-rest">
+      <p class="lead">150 mapas mentais de cinesiologia, um por exercício. Você abre no celular, mostra o músculo na imagem e responde com calma — em vez de blefar.</p>
+
+      <ul class="hero-points">
+        <li><svg class="icon"><use href="#i-check"/></svg><span>Quais músculos cada exercício trabalha, com a imagem para mostrar</span></li>
+        <li><svg class="icon"><use href="#i-check"/></svg><span>Execução correta e os erros a corrigir, desenhados</span></li>
+        <li><svg class="icon"><use href="#i-check"/></svg><span>No celular, no meio do treino. Acesso na hora</span></li>
+      </ul>
+
+      <div class="hero-offer">
+        <div class="price-row">
+          <span class="label">Pacote completo: 150 mapas + 3 bônus</span>
+          <span class="old">R$ 320,60</span>
+          <span class="now"><small>R$</small>37,90</span>
+          <span class="per">uma vez só, seu para sempre</span>
+        </div>
+        <a class="btn" id="cta-hero" href="https://pay.kiwify.com.br/uLy4NBg">Quero os 150 mapas <svg class="icon"><use href="#i-arrow"/></svg></a>
+        <div class="btn-note">
+          <span><svg class="icon"><use href="#i-bolt"/></svg>Acesso imediato</span>
+          <span><svg class="icon"><use href="#i-shield"/></svg>Garantia de 7 dias</span>
+          <span><svg class="icon"><use href="#i-pix"/></svg>Pix ou cartão</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ 2. A DOR ============ -->
+<section class="dor">
+  <div class="wrap">
+    <h2>Você conhece esse silêncio.</h2>
+    <div class="cenas">
+      <div class="cena">
+        <q>Esse aqui pega o quê?</q>
+        <p>Você responde “costas” e torce para ele não perguntar qual parte. Ele pergunta.</p>
+      </div>
+      <div class="cena">
+        <q>Tô sentindo no ombro, é normal?</q>
+        <p>Você não sabe se é estabilizador trabalhando ou execução errada. Diz “é normal” e passa o resto da série com medo de estar errado.</p>
+      </div>
+      <div class="cena">
+        <q>Por que não pode puxar atrás da nuca?</q>
+        <p>Você sabia isso na prova. Agora só lembra que “não pode”. Ele faz a mesma pergunta para outro personal — e lembra de quem não soube.</p>
+      </div>
+    </div>
+
+    <div class="contraste">
+      <p>A faculdade te deu quatro anos de teoria. Não te deu a resposta pronta para terça-feira, 19h, com o aluno olhando para você.</p>
+      <p>O pior não é errar. É a sensação de que o aluno percebeu.</p>
+      <p><strong>Não é falta de estudo. É falta de consulta rápida.</strong> Ninguém decora 150 exercícios com músculo, plano e erro. O personal que “sabe tudo” tem onde olhar. Você ainda não tinha.</p>
+    </div>
+
+    <div class="semcom">
+      <div class="sem">
+        <h3>Sem o mapa</h3>
+        <ul>
+          <li><svg class="icon"><use href="#i-x"/></svg><span>Responde genérico e muda de assunto</span></li>
+          <li><svg class="icon"><use href="#i-x"/></svg><span>“Depois eu te explico direitinho” — e não explica</span></li>
+          <li><svg class="icon"><use href="#i-x"/></svg><span>Vê o erro na execução e não sabe nomear o que corrigir</span></li>
+          <li><svg class="icon"><use href="#i-x"/></svg><span>Sai do treino com a sensação de que passou vergonha</span></li>
+        </ul>
+      </div>
+      <div class="com">
+        <h3>Com o mapa</h3>
+        <ul>
+          <li><svg class="icon"><use href="#i-check"/></svg><span>Abre o celular e mostra o músculo na imagem</span></li>
+          <li><svg class="icon"><use href="#i-check"/></svg><span>Responde em dez segundos, com o nome certo</span></li>
+          <li><svg class="icon"><use href="#i-check"/></svg><span>Aponta o erro comum e o ajuste, item por item</span></li>
+          <li><svg class="icon"><use href="#i-check"/></svg><span>Sai do treino com o aluno olhando para você diferente</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 3. DISSECAÇÃO DE UM MAPA ============ -->
+<section class="paper disseca">
+  <div class="wrap">
+    <h2>Cada mapa é assim. Sempre igual, sempre no mesmo lugar.</h2>
+    <p class="lead">Um exercício por página. Sete blocos fixos, uma dica de ouro e a legenda de cores. Depois do quinto mapa você acha a informação sem ler, só pela posição.</p>
+
+    <div class="disseca-grid">
+      <button class="mapa-grande" type="button" data-lb="img/mapa-01.jpg" aria-label="Ampliar o mapa da Puxada Frontal">
+        <img src="img/mapa-01.jpg" width="1287" height="862" alt="Mapa mental da Puxada Frontal com os sete blocos: músculos primários, secundários, estabilizadores, movimento articular, plano anatômico, execução correta e erros comuns" loading="lazy">
+        <span class="zoom-hint"><svg class="icon"><use href="#i-zoom"/></svg>Toque para ampliar</span>
+      </button>
+
+      <ol class="blocos">
+        <li><span class="n bl-1">1</span><div><b>Músculos primários</b><span>Quem faz o movimento. Com a imagem do músculo destacado para mostrar ao aluno.</span></div></li>
+        <li><span class="n bl-2">2</span><div><b>Músculos secundários</b><span>Quem ajuda. A resposta para “por que sinto no braço se é costas?”.</span></div></li>
+        <li><span class="n bl-3">3</span><div><b>Estabilizadores</b><span>Core, eretores, manguito. O que segura a postura enquanto o primário trabalha.</span></div></li>
+        <li><span class="n bl-4">4</span><div><b>Movimento articular</b><span>Adução, extensão, flexão: o nome técnico de cada fase, com o desenho.</span></div></li>
+        <li><span class="n bl-5">5</span><div><b>Plano anatômico</b><span>Frontal, sagital ou transversal. Cai em toda avaliação e ninguém lembra.</span></div></li>
+        <li><span class="n bl-6">6</span><div><b>Execução correta</b><span>Pegada, postura, trajeto da barra, cadência. Item por item, com o boneco.</span></div></li>
+        <li><span class="n bl-7">7</span><div><b>Erros comuns</b><span>Os cinco erros que você vai ver na academia, ilustrados. Para corrigir pelo nome.</span></div></li>
+        <li><span class="n bl-8">★</span><div><b>Dica de ouro</b><span>A frase que faz o aluno acertar na primeira tentativa. Pronta para repetir.</span></div></li>
+      </ol>
+    </div>
+    <p class="disseca-nota">Isso é a página real do material, não um mockup. Amplie e leia.</p>
+  </div>
+</section>
+
+<!-- ============ 4. GALERIA ============ -->
+<section class="paper galeria">
+  <div class="wrap">
+    <h2>Mais cinco, abertos. Leia antes de comprar.</h2>
+    <p class="lead">Toque em qualquer um para ler em tela cheia. Se não der para usar no treino de amanhã, não compre.</p>
+    <div class="galeria-grid">
+      <figure style="margin:0"><button type="button" data-lb="img/mapa-02.jpg"><img src="img/mapa-02.jpg" width="1287" height="862" alt="Mapa mental da Elevação Lateral" loading="lazy"><figcaption>Elevação Lateral · ombros</figcaption></button></figure>
+      <figure style="margin:0"><button type="button" data-lb="img/mapa-03.jpg"><img src="img/mapa-03.jpg" width="1287" height="862" alt="Mapa mental do Face Pull" loading="lazy"><figcaption>Face Pull · posterior de ombro</figcaption></button></figure>
+      <figure style="margin:0"><button type="button" data-lb="img/mapa-04.jpg"><img src="img/mapa-04.jpg" width="1287" height="862" alt="Mapa mental do Agachamento Livre" loading="lazy"><figcaption>Agachamento Livre · pernas</figcaption></button></figure>
+      <figure style="margin:0"><button type="button" data-lb="img/mapa-05.jpg"><img src="img/mapa-05.jpg" width="1287" height="862" alt="Mapa mental do Supino Reto com Barra" loading="lazy"><figcaption>Supino Reto com Barra · peito</figcaption></button></figure>
+      <figure style="margin:0"><button type="button" data-lb="img/mapa-01.jpg"><img src="img/mapa-01.jpg" width="1287" height="862" alt="Mapa mental da Puxada Frontal" loading="lazy"><figcaption>Puxada Frontal · costas</figcaption></button></figure>
+      <figure style="margin:0"><button type="button" data-lb="img/mapa-06.jpg"><img src="img/mapa-06.jpg" width="1287" height="862" alt="Capa do material Chega de Blefar na Frente do Aluno" loading="lazy"><figcaption>Capa do material</figcaption></button></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 5. O QUE ESTÁ DENTRO ============ -->
+<section class="paper incluso">
+  <div class="wrap">
+    <h2>150 exercícios, organizados por grupo muscular.</h2>
+    <p class="lead">Os que aparecem em toda ficha de academia. Você procura pelo grupo, acha o exercício, abre o mapa.</p>
+    <div class="incluso-grid">
+      <div>
+        <ul class="grupos">
+          <li><svg class="icon"><use href="#i-muscle"/></svg>Peito</li>
+          <li><svg class="icon"><use href="#i-muscle"/></svg>Costas</li>
+          <li><svg class="icon"><use href="#i-muscle"/></svg>Ombros</li>
+          <li><svg class="icon"><use href="#i-muscle"/></svg>Braços</li>
+          <li><svg class="icon"><use href="#i-muscle"/></svg>Pernas e glúteos</li>
+          <li><svg class="icon"><use href="#i-muscle"/></svg>Core e abdômen</li>
+        </ul>
+        <p class="exemplos" style="margin-top:14px">Entre eles: <b>Supino Reto com Barra</b>, <b>Puxada Frontal</b>, <b>Agachamento Livre</b>, <b>Levantamento Terra</b>, <b>Rosca Direta</b>, <b>Elevação Lateral</b>, <b>Face Pull</b>… e mais 143.
+        <!-- PREENCHER: substituir por um índice completo (ou os 20 mais procurados por grupo). É a pergunta nº 1 de quem ainda não comprou. --></p>
+      </div>
+      <ul class="formatos">
+        <li><svg class="icon"><use href="#i-phone"/></svg><span><b>No celular ou tablet.</b> Um PDF, abre em qualquer aparelho, sem aplicativo.</span></li>
+        <li><svg class="icon"><use href="#i-print"/></svg><span><b>Impresso.</b> Formato paisagem, A4. Imprima os que mais usa e deixe na prancheta.</span></li>
+        <li><svg class="icon"><use href="#i-mail"/></svg><span><b>Chega por e-mail</b> assim que o pagamento confirma. Pix cai em minutos.</span></li>
+        <li><svg class="icon"><use href="#i-check"/></svg><span><b>Seu para sempre.</b> Baixou, é seu. Sem mensalidade, sem login que expira.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 6. COMO USAR ============ -->
+<section class="usar">
+  <div class="wrap">
+    <h2>Como entra no seu atendimento</h2>
+    <div class="passos">
+      <div class="passo">
+        <span class="quando">Antes</span>
+        <div><h3>Olha a ficha do aluno</h3><p>Cinco minutos antes, abre o mapa dos exercícios do dia. Músculo, plano, erro. Está fresco na cabeça quando ele chega.</p></div>
+      </div>
+      <div class="passo">
+        <span class="quando">Durante</span>
+        <div><h3>O aluno pergunta, você mostra</h3><p>Abre o celular, aponta o músculo na imagem, lê a execução. A resposta vem com desenho, não com “acho que”.</p></div>
+      </div>
+      <div class="passo">
+        <span class="quando">Depois</span>
+        <div><h3>Imprime os que repete</h3><p>Os 20 exercícios que aparecem em toda ficha vão para a prancheta. O resto fica no celular.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 7. BÔNUS ============ -->
+<section class="bonus">
+  <div class="wrap">
+    <h2>Três bônus para as perguntas que o mapa do exercício não responde</h2>
+    <p class="lead">Cada um existe porque um aluno perguntou e o personal não tinha onde olhar.</p>
+    <div class="bonus-grid">
+      <div class="bonus-item">
+        <img src="img/bonus-1.jpg" width="1000" height="667" alt="Anatomia Ilustrada: quadríceps, glúteos, peitoral maior, costas e bíceps braquial" loading="lazy">
+        <div class="bonus-body">
+          <h3>Anatomia Ilustrada</h3>
+          <p>Os principais músculos, um por página, ilustrados e nomeados.</p>
+          <p class="quando"><b>Quando usa:</b> o aluno pergunta “onde fica isso?” e você mostra em vez de descrever.</p>
+          <p class="valor">Vendido separado por <s>R$ 97,90</s></p>
+        </div>
+      </div>
+      <div class="bonus-item">
+        <img src="img/bonus-2.jpg" width="1000" height="667" alt="Hipertrofia Resumida: os três estímulos, via mTOR, volume e intensidade, recuperação e nutrição" loading="lazy">
+        <div class="bonus-body">
+          <h3>Hipertrofia Resumida</h3>
+          <p>Os mecanismos do ganho de massa, explicados em esquema visual.</p>
+          <p class="quando"><b>Quando usa:</b> “como eu cresço mais rápido?” — e você responde com os três estímulos, não com “treina pesado”.</p>
+          <p class="valor">Vendido separado por <s>R$ 54,90</s></p>
+        </div>
+      </div>
+      <div class="bonus-item">
+        <img src="img/bonus-3.jpg" width="1000" height="667" alt="30 Fichas de Treino prontas: hipertrofia, emagrecimento e condicionamento" loading="lazy">
+        <div class="bonus-body">
+          <h3>30 Fichas de Treino Já Montadas</h3>
+          <p>Hipertrofia, emagrecimento e condicionamento. Exercícios, séries e repetições preenchidos, só falta a carga.</p>
+          <p class="quando"><b>Quando usa:</b> aluno novo na segunda-feira e você precisa de ponto de partida em cinco minutos.</p>
+          <p class="valor">Vendido separado por <s>R$ 79,90</s></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 8. OFERTA ============ -->
+<section class="oferta" id="oferta">
+  <div class="wrap">
+    <h2 style="text-align:center">Você não está comprando um PDF. Está comprando a resposta na hora.</h2>
+    <p class="oferta-intro">É o que separa o personal que o aluno indica do personal que o aluno troca. Não é conhecimento — esse você tem. É ter onde olhar quando a pergunta vem.</p>
+
+    <div class="oferta-card">
+      <div class="nome">Pacote completo<small>150 mapas + 3 bônus. Chega por e-mail em minutos e é seu para sempre.</small></div>
+      <ul class="stack">
+        <li><span><svg class="icon"><use href="#i-check"/></svg>150 Mapas Mentais de Cinesiologia</span><span class="v">R$ 87,90</span></li>
+        <li><span><svg class="icon"><use href="#i-check"/></svg>Bônus 1: Anatomia Ilustrada</span><span class="v">R$ 97,90</span></li>
+        <li><span><svg class="icon"><use href="#i-check"/></svg>Bônus 2: Hipertrofia Resumida</span><span class="v">R$ 54,90</span></li>
+        <li><span><svg class="icon"><use href="#i-check"/></svg>Bônus 3: 30 Fichas de Treino Já Montadas</span><span class="v">R$ 79,90</span></li>
+        <li class="total"><span>Separado, sairia por</span><span class="v">R$ 320,60</span></li>
+      </ul>
+      <div class="price-row">
+        <span class="label">Hoje, no pacote</span>
+        <span class="now"><small>R$</small>37,90</span>
+        <span class="per">pagamento único</span>
+      </div>
+      <p class="preco-nota">Menos que uma sessão avulsa. Vale para todas as que vêm depois.</p>
+      <a class="btn" id="cta-oferta" href="https://pay.kiwify.com.br/uLy4NBg">Quero os 150 mapas + bônus <svg class="icon"><use href="#i-arrow"/></svg></a>
+      <div class="btn-note">
+        <span><svg class="icon"><use href="#i-pix"/></svg>Pix ou cartão</span>
+        <span><svg class="icon"><use href="#i-bolt"/></svg>Chega por e-mail em minutos</span>
+        <span><svg class="icon"><use href="#i-shield"/></svg>7 dias de garantia</span>
+      </div>
+    </div>
+
+    <p class="oferta-compara">Uma pergunta sem resposta pode custar um aluno de <b>R$ 300 por mês</b>. Isso aqui custa <b>R$ 37,90, uma vez</b>.</p>
+
+    <div class="basico">
+      <span>Prefere só os 150 mapas, sem os bônus?</span>
+      <a href="https://pay.kiwify.com.br/KL3SeNm" id="cta-basico">Levar só os mapas por R$ 19,90</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 9. GARANTIA ============ -->
+<section class="garantia">
+  <div class="wrap">
+    <div class="garantia-box">
+      <img src="img/garantia-7-dias.jpg" width="400" height="400" alt="Selo: garantia de 7 dias" loading="lazy">
+      <div>
+        <h2>Leve para o treino de amanhã. Se não servir, o dinheiro volta.</h2>
+        <p>Você tem 7 dias. Abra os mapas, use na frente do aluno, veja se a resposta vem. Se não vier, manda um e-mail e o valor volta 100%, sem perguntas e sem formulário. O risco é nosso. O que fica com você é a tranquilidade de ter onde olhar.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 11. DEPOIMENTOS (oculto até ter 3 reais) ============
+     Remova o atributo `hidden` quando tiver depoimentos verdadeiros: print de WhatsApp, nome e cidade.
+     Nunca invente. Anúncio da Meta com depoimento falso derruba a conta. -->
+<section class="depoimentos" hidden>
+  <div class="wrap">
+    <h2>Quem já usa no atendimento</h2>
+    <div class="cenas" style="margin-top:28px">
+      <div class="cena"><q>[frase curta do depoimento]</q><p>[Nome], personal em [cidade]</p></div>
+      <div class="cena"><q>[frase curta do depoimento]</q><p>[Nome], personal em [cidade]</p></div>
+      <div class="cena"><q>[frase curta do depoimento]</q><p>[Nome], personal em [cidade]</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 12. FAQ ============ -->
+<section class="faq">
+  <div class="wrap">
+    <h2 style="text-align:center">Perguntas de quem está quase comprando</h2>
+    <div class="faq-list">
+      <details>
+        <summary>Quais exercícios estão nos 150 mapas?<svg class="icon"><use href="#i-plus"/></svg></summary>
+        <p>Os exercícios que aparecem em toda ficha de academia, divididos por grupo muscular: peito, costas, ombros, braços, pernas e glúteos, core. Entre eles supino reto, puxada frontal, agachamento livre, levantamento terra, rosca direta, elevação lateral e face pull. <!-- PREENCHER: link para o índice completo --></p>
+      </details>
+      <details>
+        <summary>Funciona para quem acabou de se formar?<svg class="icon"><use href="#i-plus"/></svg></summary>
+        <p>Foi feito para isso. Os primeiros meses de atendimento são quando a pergunta do aluno mais assusta e a base precisa estar à mão, não na memória.</p>
+      </details>
+      <details>
+        <summary>E para quem já atende há anos?<svg class="icon"><use href="#i-plus"/></svg></summary>
+        <p>Serve como consulta rápida e material para mostrar ao aluno. Quem já domina cinesiologia usa mais os desenhos de erro e execução do que a lista de músculos.</p>
+      </details>
+      <details>
+        <summary>Como recebo o material?<svg class="icon"><use href="#i-plus"/></svg></summary>
+        <p>Por e-mail, assim que o pagamento confirma. Pix confirma em minutos; cartão, na hora. Você recebe o link para baixar os PDFs e eles ficam salvos no seu aparelho.</p>
+      </details>
+      <details>
+        <summary>Preciso instalar algum aplicativo?<svg class="icon"><use href="#i-plus"/></svg></summary>
+        <p>Não. É PDF: abre em qualquer celular, tablet ou computador com o leitor que já vem instalado.</p>
+      </details>
+      <details>
+        <summary>Dá para imprimir?<svg class="icon"><use href="#i-plus"/></svg></summary>
+        <p>Sim. Os mapas e as fichas de treino estão em formato paisagem, tamanho A4, pensados para prancheta.</p>
+      </details>
+      <details>
+        <summary>Vou parecer inseguro consultando o celular na frente do aluno?<svg class="icon"><use href="#i-plus"/></svg></summary>
+        <p>O contrário. Mostrar a imagem do músculo no celular é o que os bons fazem — o aluno entende e confia. Inseguro é inventar a resposta e mudar de assunto.</p>
+      </details>
+      <details>
+        <summary>Substitui a faculdade ou uma pós?<svg class="icon"><use href="#i-plus"/></svg></summary>
+        <p>Não. É ferramenta de consulta para o dia a dia do atendimento, não formação acadêmica. Para aprofundar teoria, continue estudando; para responder o aluno agora, use o mapa.</p>
+      </details>
+      <details>
+        <summary>O que é o Pacote completo e o que é “só os mapas”?<svg class="icon"><use href="#i-plus"/></svg></summary>
+        <p>“Só os mapas” são os 150 mapas de cinesiologia por R$ 19,90. O Pacote completo tem os 150 mapas mais os três bônus (Anatomia Ilustrada, Hipertrofia Resumida e 30 Fichas de Treino) por R$ 37,90. A diferença é R$ 18 por três materiais que, separados, custam R$ 232,70.</p>
+      </details>
+      <details>
+        <summary>E se eu não gostar?<svg class="icon"><use href="#i-plus"/></svg></summary>
+        <p>Você tem 7 dias de garantia incondicional. Manda um e-mail para <a href="mailto:PREENCHER@email.com">PREENCHER@email.com</a> e devolvemos 100%.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 13. FECHAMENTO ============ -->
+<section class="final">
+  <div class="wrap">
+    <h2>O aluno vai perguntar. <em>A diferença é o que acontece nos três segundos seguintes.</em></h2>
+    <p class="final-linha">Da próxima vez, você abre o mapa.</p>
+    <div class="price-row">
+      <span class="label">Pacote completo: 150 mapas + 3 bônus</span>
+      <span class="old">R$ 320,60</span>
+      <span class="now"><small>R$</small>37,90</span>
+    </div>
+    <a class="btn" id="cta-final" href="https://pay.kiwify.com.br/uLy4NBg">Quero os 150 mapas + bônus <svg class="icon"><use href="#i-arrow"/></svg></a>
+    <div class="btn-note">
+      <span><svg class="icon"><use href="#i-bolt"/></svg>Acesso imediato</span>
+      <span><svg class="icon"><use href="#i-shield"/></svg>Garantia de 7 dias</span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <b>Chega de Blefar na Frente do Aluno · Cinesiologia de bolso para personal trainer</b>
+    <p>Material educativo. Não substitui formação acadêmica, avaliação ou prescrição profissional. Resultados no atendimento dependem do uso.</p>
+    <nav>
+      <a href="termos.html">Termos de uso</a>
+      <a href="privacidade.html">Política de privacidade</a>
+      <a href="mailto:PREENCHER@email.com">Suporte</a>
+    </nav>
+    <p style="margin-top:14px">© 2026 · [Razão social e CNPJ/CPF do vendedor] <!-- PREENCHER --></p>
+  </div>
+</footer>
+
+<!-- Barra fixa no celular: aparece quando o botão do hero sai da tela -->
+<div class="sticky" id="sticky" aria-hidden="true">
+  <div class="p"><small>Pacote completo</small><strong>R$ 37,90</strong></div>
+  <a class="btn" href="https://pay.kiwify.com.br/uLy4NBg" tabindex="-1">Quero os mapas <svg class="icon"><use href="#i-arrow"/></svg></a>
+</div>
+
+<!-- Lightbox dos mapas -->
+<dialog class="lb" id="lb" aria-label="Mapa ampliado">
+  <button class="lb-close" type="button" id="lbClose" aria-label="Fechar"><svg class="icon"><use href="#i-x"/></svg></button>
+  <div class="lb-inner" id="lbInner"></div>
+  <span class="lb-tip">Aproxime os dedos para dar zoom</span>
+</dialog>
+
+<script>
+  // Barra fixa: liga quando o botão do hero já passou; desliga quando um botão de compra está na tela
+  (function(){
+    var sticky = document.getElementById('sticky');
+    var heroBtn = document.getElementById('cta-hero');
+    var ctas = [document.getElementById('cta-oferta'), document.getElementById('cta-final')];
+    var link = sticky.querySelector('a'); var ticking = false;
+    function near(el){ var r = el.getBoundingClientRect(); return r.top < innerHeight + 80 && r.bottom > -80; }
+    function update(){
+      ticking = false;
+      var on = heroBtn.getBoundingClientRect().bottom < 0 && !ctas.some(near);
+      sticky.classList.toggle('on', on); sticky.setAttribute('aria-hidden', String(!on)); link.tabIndex = on ? 0 : -1;
+    }
+    addEventListener('scroll', function(){ if(!ticking){ ticking = true; requestAnimationFrame(update); } }, {passive:true});
+    addEventListener('resize', update); update();
+  })();
+
+  // Lightbox: qualquer elemento com data-lb abre a imagem em tela cheia
+  (function(){
+    var lb = document.getElementById('lb'), inner = document.getElementById('lbInner');
+    if(!lb || !lb.showModal) return;
+    document.querySelectorAll('[data-lb]').forEach(function(b){
+      b.addEventListener('click', function(){
+        var img = new Image(); img.src = b.getAttribute('data-lb'); img.alt = (b.querySelector('img')||{}).alt || 'Mapa ampliado';
+        inner.replaceChildren(img); lb.showModal();
       });
-    </script>
-  </body>
+    });
+    document.getElementById('lbClose').addEventListener('click', function(){ lb.close(); });
+    lb.addEventListener('click', function(e){ if(e.target === lb || e.target === inner) lb.close(); });
+    lb.addEventListener('close', function(){ inner.replaceChildren(); });
+  })();
+
+  // Pixel: dispara InitiateCheckout em todo botão de compra (só funciona depois de colar o código-base do Pixel no <head>)
+  document.querySelectorAll('a[href^="https://pay.kiwify.com.br/"]').forEach(function(a){
+    a.addEventListener('click', function(){ if(window.fbq){ fbq('track','InitiateCheckout'); } });
+  });
+  if(window.fbq){ fbq('track','ViewContent'); }
+</script>
+</body>
 </html>
