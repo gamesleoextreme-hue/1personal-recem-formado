@@ -136,15 +136,7 @@
 
   /* ===== Dor ===== */
   .dor{padding-top:20px;}
-  .dor h2{max-width:14ch;}
-  .cenas{margin-top:28px;display:grid;gap:14px;}
-  .cena{
-    background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:18px 20px;
-    display:grid;gap:8px;
-  }
-  .cena q{font-family:var(--display);font-weight:700;font-size:26px;line-height:1.12;color:var(--text);quotes:"“" "”";}
-  .cena p{color:var(--muted);font-size:16px;}
-  .contraste{margin-top:32px;border-left:0;display:grid;gap:10px;max-width:60ch;}
+  .contraste{margin-top:0;border-left:0;display:grid;gap:10px;max-width:60ch;}
   .contraste p{font-size:clamp(19px,2.6vw,23px);font-weight:600;line-height:1.35;}
   .contraste p strong{color:var(--green);font-weight:700;}
   .semcom{margin-top:36px;display:grid;gap:14px;}
@@ -156,7 +148,17 @@
   .semcom li{display:flex;gap:10px;align-items:flex-start;font-size:16px;}
   .semcom .icon{margin-top:4px;width:18px;height:18px;color:var(--muted);}
   .semcom .com .icon{color:var(--green);}
-  @media(min-width:760px){.cenas{grid-template-columns:repeat(3,1fr);} .semcom{grid-template-columns:1fr 1fr;}}
+  @media(min-width:760px){.semcom{grid-template-columns:1fr 1fr;}}
+
+  /* Depoimentos (reaproveita o cartão de citação) */
+  .cenas{display:grid;gap:14px;}
+  .cena{
+    background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:18px 20px;
+    display:grid;gap:8px;
+  }
+  .cena q{font-family:var(--display);font-weight:700;font-size:26px;line-height:1.12;color:var(--text);quotes:"“" "”";}
+  .cena p{color:var(--muted);font-size:16px;}
+  @media(min-width:760px){.cenas{grid-template-columns:repeat(3,1fr);}}
 
   /* ===== Superfície clara (prova de produto) ===== */
   .paper{background:var(--paper);color:var(--paper-text);}
@@ -475,22 +477,6 @@
 <!-- ============ 2. A DOR ============ -->
 <section class="dor">
   <div class="wrap">
-    <h2>Você conhece esse silêncio.</h2>
-    <div class="cenas">
-      <div class="cena">
-        <q>Esse aqui pega o quê?</q>
-        <p>Você responde “costas” e torce para ele não perguntar qual parte. Ele pergunta.</p>
-      </div>
-      <div class="cena">
-        <q>Tô sentindo no ombro, é normal?</q>
-        <p>Você não sabe se é estabilizador trabalhando ou execução errada. Diz “é normal” e passa o resto da série com medo de estar errado.</p>
-      </div>
-      <div class="cena">
-        <q>Por que não pode puxar atrás da nuca?</q>
-        <p>Você sabia isso na prova. Agora só lembra que “não pode”. Ele faz a mesma pergunta para outro personal — e lembra de quem não soube.</p>
-      </div>
-    </div>
-
     <div class="contraste">
       <p>A faculdade te deu quatro anos de teoria. Não te deu a resposta pronta para terça-feira, 19h, com o aluno olhando para você.</p>
       <p>O pior não é errar. É a sensação de que o aluno percebeu.</p>
