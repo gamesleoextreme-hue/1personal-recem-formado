@@ -40,6 +40,8 @@
     --paper-text:#141814;
     --paper-muted:#5B655B;
     --old:#C98B8B;
+    --gold:#F2C94C;
+    --gold-soft:#FFE08A;
     --radius:14px;
     --radius-lg:22px;
     --shadow:0 14px 34px -12px rgba(0,0,0,.55);
@@ -255,9 +257,19 @@
   }
   .oferta-card{
     position:relative;max-width:600px;margin:32px auto 0;background:var(--surface);
-    border:2px solid var(--green);border-radius:var(--radius-lg);padding:26px 22px 26px;
+    border:2px solid var(--gold);border-radius:var(--radius-lg);padding:26px 22px 26px;
     box-shadow:0 30px 60px -28px rgba(0,0,0,.7);display:grid;gap:18px;
+    animation:oferta-pulse 2.4s ease-in-out infinite;
   }
+  @keyframes oferta-pulse{
+    0%,100%{border-color:var(--gold);box-shadow:0 30px 60px -28px rgba(0,0,0,.7),0 0 0 0 rgba(242,201,76,.55);}
+    50%{border-color:var(--gold-soft);box-shadow:0 30px 60px -28px rgba(0,0,0,.7),0 0 26px 6px rgba(242,201,76,.6);}
+  }
+  .oferta-mockup{width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:12px;margin-top:6px;}
+  .oferta-bonus-thumbs{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;}
+  .oferta-bonus-thumbs img{width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:9px;display:block;}
+  .oferta-bonus-thumbs figure{margin:0;}
+  .oferta-bonus-thumbs figcaption{font-size:11.5px;font-weight:600;color:var(--muted);text-align:center;margin-top:6px;line-height:1.3;}
   .oferta-card .nome{font-family:var(--display);font-weight:800;font-size:34px;line-height:1.06;}
   .oferta-card .nome small{display:block;font-family:var(--body);font-weight:500;font-size:15px;line-height:1.4;color:var(--muted);margin-top:6px;letter-spacing:0;}
   .stack{display:grid;gap:10px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:16px 0;}
@@ -273,12 +285,15 @@
   .oferta-compara{max-width:600px;margin:18px auto 0;text-align:center;font-size:16px;color:var(--muted);position:relative;}
   .oferta-compara b{color:var(--text);}
   .final-linha{margin-top:14px;font-size:clamp(18px,2.4vw,22px);font-weight:600;color:var(--muted);}
-  .basico{
-    max-width:600px;margin:14px auto 0;padding:16px 20px;border:1px dashed var(--line);border-radius:var(--radius);
-    display:flex;flex-wrap:wrap;gap:8px 16px;justify-content:space-between;align-items:center;font-size:15px;color:var(--muted);
+  .oferta-card-basico{border-color:var(--line);box-shadow:none;animation:none;}
+  .oferta-card-basico .nome{font-size:26px;}
+  .oferta-card-basico .price-row .now{font-size:44px;}
+  .oferta-badge{
+    position:absolute;top:-14px;left:50%;transform:translateX(-50%);
+    background:var(--green);color:var(--ink);font-family:var(--display);font-weight:800;
+    font-size:12.5px;letter-spacing:.04em;text-transform:uppercase;padding:6px 16px;border-radius:999px;
+    white-space:nowrap;box-shadow:0 6px 14px -6px rgba(0,0,0,.5);
   }
-  .basico a{color:var(--text);font-weight:600;text-decoration:underline;text-underline-offset:4px;text-decoration-color:var(--green);}
-  .basico a:hover{color:var(--green);}
 
   /* ===== Garantia ===== */
   .garantia{padding-top:0;}
@@ -357,6 +372,7 @@
   }
   @media(prefers-reduced-motion:reduce){
     html{scroll-behavior:auto;} .sticky{transition:none;} .btn,.galeria button{transition:none;}
+    .oferta-card{animation:none;}
   }
 
   /* ===== Impressão / PDF ===== */
@@ -367,11 +383,11 @@
     .wrap{padding:0 34px;}
     .sticky,dialog,.zoom-hint,.hero::before,.oferta::before{display:none!important;}
     *{box-shadow:none!important;text-shadow:none!important;} /* sombras viram blocos pretos na compressão do PDF */
-    .hero-h1,.hero-media,.hero-rest{animation:none!important;}
+    .hero-h1,.hero-media,.hero-rest,.oferta-card{animation:none!important;}
     .hero{padding:36px 0 40px;}
     section{padding:40px 0;}
     h2{break-after:avoid;}
-    .cena,.bonus-item,.oferta-card,.garantia-box,details,.passo,.galeria figure,.mapa-grande,.hero-offer,.semcom > div,.basico,.blocos li,.grupos li,.formatos li{break-inside:avoid;}
+    .cena,.bonus-item,.oferta-card,.garantia-box,details,.passo,.galeria figure,.mapa-grande,.hero-offer,.semcom > div,.blocos li,.grupos li,.formatos li{break-inside:avoid;}
     .mapa-grande{position:static;cursor:default;}
     .galeria button,.mapa-grande{box-shadow:none;}
     .disseca,.oferta,.incluso,.bonus{break-before:page;}
@@ -434,7 +450,7 @@
           <span class="now"><small>R$</small>37,90</span>
           <span class="per">uma vez só, seu para sempre</span>
         </div>
-        <a class="btn" id="cta-hero" href="https://pay.kiwify.com.br/uLy4NBg">Quero os 150 mapas <svg class="icon"><use href="#i-arrow"/></svg></a>
+        <a class="btn" id="cta-hero" href="#oferta">Quero os 150 mapas <svg class="icon"><use href="#i-arrow"/></svg></a>
         <div class="btn-note">
           <span><svg class="icon"><use href="#i-bolt"/></svg>Acesso imediato</span>
           <span><svg class="icon"><use href="#i-shield"/></svg>Garantia de 7 dias</span>
@@ -628,7 +644,19 @@
     <h2 style="text-align:center">Você não está comprando um PDF. Está comprando a resposta na hora.</h2>
     <p class="oferta-intro">É o que separa o personal que o aluno indica do personal que o aluno troca. Não é conhecimento — esse você tem. É ter onde olhar quando a pergunta vem.</p>
 
+    <div class="oferta-card oferta-card-basico">
+      <div class="nome">Só os mapas<small>150 mapas mentais de cinesiologia, sem os bônus.</small></div>
+      <div class="price-row">
+        <span class="label">Só os mapas</span>
+        <span class="now"><small>R$</small>27,90</span>
+        <span class="per">pagamento único</span>
+      </div>
+      <a class="btn btn-ghost" id="cta-basico" href="https://pay.kiwify.com.br/KL3SeNm">Levar só os mapas <svg class="icon"><use href="#i-arrow"/></svg></a>
+    </div>
+
     <div class="oferta-card">
+      <span class="oferta-badge">Melhor custo-benefício</span>
+      <img class="oferta-mockup" src="img/mockup-principal.jpg" width="1200" height="800" alt="Mockup do pacote completo: 150 mapas mentais de cinesiologia" loading="lazy">
       <div class="nome">Pacote completo<small>150 mapas + 3 bônus. Chega por e-mail em minutos e é seu para sempre.</small></div>
       <ul class="stack">
         <li><span><svg class="icon"><use href="#i-check"/></svg>150 Mapas Mentais de Cinesiologia</span><span class="v">R$ 87,90</span></li>
@@ -637,6 +665,11 @@
         <li><span><svg class="icon"><use href="#i-check"/></svg>Bônus 3: 30 Fichas de Treino Já Montadas</span><span class="v">R$ 79,90</span></li>
         <li class="total"><span>Separado, sairia por</span><span class="v">R$ 320,60</span></li>
       </ul>
+      <div class="oferta-bonus-thumbs">
+        <figure><img src="img/bonus-1.jpg" width="1000" height="667" alt="Bônus 1: Anatomia Ilustrada" loading="lazy"><figcaption>Anatomia Ilustrada</figcaption></figure>
+        <figure><img src="img/bonus-2.jpg" width="1000" height="667" alt="Bônus 2: Hipertrofia Resumida" loading="lazy"><figcaption>Hipertrofia Resumida</figcaption></figure>
+        <figure><img src="img/bonus-3.jpg" width="1000" height="667" alt="Bônus 3: 30 Fichas de Treino Já Montadas" loading="lazy"><figcaption>30 Fichas de Treino</figcaption></figure>
+      </div>
       <div class="price-row">
         <span class="label">Hoje, no pacote</span>
         <span class="now"><small>R$</small>37,90</span>
@@ -652,11 +685,6 @@
     </div>
 
     <p class="oferta-compara">Uma pergunta sem resposta pode custar um aluno de <b>R$ 300 por mês</b>. Isso aqui custa <b>R$ 37,90, uma vez</b>.</p>
-
-    <div class="basico">
-      <span>Prefere só os 150 mapas, sem os bônus?</span>
-      <a href="https://pay.kiwify.com.br/KL3SeNm" id="cta-basico">Levar só os mapas por R$ 19,90</a>
-    </div>
   </div>
 </section>
 
@@ -726,7 +754,7 @@
       </details>
       <details>
         <summary>O que é o Pacote completo e o que é “só os mapas”?<svg class="icon"><use href="#i-plus"/></svg></summary>
-        <p>“Só os mapas” são os 150 mapas de cinesiologia por R$ 19,90. O Pacote completo tem os 150 mapas mais os três bônus (Anatomia Ilustrada, Hipertrofia Resumida e 30 Fichas de Treino) por R$ 37,90. A diferença é R$ 18 por três materiais que, separados, custam R$ 232,70.</p>
+        <p>“Só os mapas” são os 150 mapas de cinesiologia por R$ 27,90. O Pacote completo tem os 150 mapas mais os três bônus (Anatomia Ilustrada, Hipertrofia Resumida e 30 Fichas de Treino) por R$ 37,90. A diferença é R$ 10 por três materiais que, separados, custam R$ 232,70.</p>
       </details>
       <details>
         <summary>E se eu não gostar?<svg class="icon"><use href="#i-plus"/></svg></summary>
